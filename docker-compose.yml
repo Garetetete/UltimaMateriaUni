@@ -1,8 +1,17 @@
-version: '3.8'
-
 services:
-  unittests:
-    build: .
-    command: pytest
-    volumes:
-      - .:/app
+    webapp:
+      build: .
+      ports:
+        - "8000:8000"
+      command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    app:
+      build: .
+      ports:
+        - "8000:8000"
+    unittests:
+      build: .
+      command: pytest
+      volumes:
+        - .:/app
+      depends_on:
+        - webapp
