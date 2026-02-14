@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  unittests:
+    build: .
+    command: pytest
+    volumes:
+      - .:/app

@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pytest
+pytest-bdd
+pytest-cov
+jinja2
+playwright
+httpx
+unittest2==1.1.0
